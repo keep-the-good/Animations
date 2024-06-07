@@ -68,13 +68,19 @@ animation_five.add({
     duration: 100,   
 }).add({
     targets: ".--3",
-    translateY: [                
-        // { value: -55, duration: 1000, delay: 0, endDelay: -665},
+    translateY: [       
         { value: -55, duration: 400, endDelay: -250, easing: "easeOutBack"},        
         { value: 0, duration: 600, delay: 0, easing: 'easeOutBounce'},                
     ],
 }, 1300);
 
-// document.querySelector(".--restart").onclick = animation.restart;
+document.querySelector(".--restart").addEventListener("click", () => {
+    animation.restart();
+    animation_two.restart();
+    animation_three.restart();
+    animation_four.restart();
+    animation_five.restart();
+}) 
+
 // document.querySelector(".--play").onclick = animation.play;
 // document.querySelector(".--stop").onclick = animation.pause;
